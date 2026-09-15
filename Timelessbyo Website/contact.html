@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e0e0d">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Contact — Timelessbyo</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Timelessbyo — Photography">
+<meta property="og:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta property="og:image" content="images/portrait-1.jpg">
+<meta property="og:image:alt" content="Timelessbyo photography">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Timelessbyo — Photography">
+<meta name="twitter:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta name="twitter:image" content="images/portrait-1.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-hero {
+    padding: 190px 0 70px;
+    background: var(--pine);
+    color: var(--ivory);
+  }
+  .page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-style: italic; }
+  .page-hero p { max-width: 480px; margin-top: 18px; color: rgba(247,241,230,0.72); line-height: 1.8; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 50px; } }
+
+  .field { margin-bottom: 26px; }
+  .field label { display: block; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 10px 2px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    color: var(--charcoal);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
+  .form-status { margin-top: 20px; font-size: 0.9rem; color: var(--gold); min-height: 1.2em; }
+
+  .info-block { border-left: 1px solid var(--line); padding-left: 46px; }
+  @media (max-width: 900px) { .info-block { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 40px; } }
+  .info-item { margin-bottom: 34px; }
+  .info-item .eyebrow { display: block; margin-bottom: 8px; }
+  .info-item p, .info-item a { font-size: 1.05rem; color: var(--pine); }
+  .info-item a:hover { color: var(--gold); }
+
+  .payment-panel { margin-top: 42px; padding: 30px; border: 1px solid var(--line); background: rgba(247,241,230,0.35); }
+  .payment-panel h2 { margin: 8px 0 10px; font-size: clamp(1.5rem, 3vw, 2rem); }
+  .payment-panel > p { max-width: 520px; line-height: 1.75; color: var(--muted, #666); }
+  .payment-details { margin: 24px 0 0; display: grid; gap: 14px; }
+  .payment-detail { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .payment-detail span:first-child { color: var(--muted, #666); }
+  .payment-detail strong { text-align: right; }
+  .pay-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+  .payment-note { margin-top: 18px; font-size: 0.86rem; line-height:1.6; color: var(--muted, #666); }
+  @media (max-width: 600px) { .payment-panel { padding: 24px 20px; } .payment-detail { flex-direction:column; gap:4px; } .payment-detail strong { text-align:left; } }
+</style>
+</head>
+<body>
+<header class="site-header page-header">
+  <a href="index.html" class="brand">
+    <img src="images/logo-light.png" alt="Timelessbyo" class="brand-logo brand-logo-light" loading="lazy" decoding="async" draggable="false">
+    <img src="images/logo-dark.png" alt="Timelessbyo" class="brand-logo brand-logo-dark" loading="lazy" decoding="async" draggable="false">
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 style="margin-top:16px;">Book a Session</h1>
+      <p>Tell us a little about what you have in mind and we'll follow up to confirm availability.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <form id="bookingForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="150" required>
+          </div>
+          <div class="field">
+            <label for="category">Type of Shoot</label>
+            <select id="category" name="category">
+              <option>Weddings &amp; Events</option>
+              <option>Portraits &amp; Fashion</option>
+              <option>Commercial &amp; Product</option>
+              <option>Nature, Travel &amp; Fine Art</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <div class="field">
+            <label for="message">Tell us about your shoot</label>
+            <textarea id="message" name="message" maxlength="1500" placeholder="Location, occasion, number of people, anything else we should know"></textarea>
+          </div>
+          <div class="field" aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px;">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
+            <button type="submit" class="btn btn-dark">Send Enquiry</button>
+            <a href="#payment" class="btn btn-gold">Pay Now</a>
+            <a href="https://wa.me/447933177640" target="_blank" rel="noopener" class="btn btn-gold">Message on WhatsApp</a>
+          </div>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+
+      <div class="info-block reveal">
+        <div class="payment-panel" id="payment">
+          <span class="eyebrow">Secure Bank Transfer</span>
+          <h2>Pay for your booking</h2>
+          <p>Ready to make your payment? Use the account details below to complete your bank transfer directly to Timelessbyo. Please use your name or booking reference as the payment reference.</p>
+          <div class="payment-details" aria-label="Payment details">
+            <div class="payment-detail"><span>Account Name</span><strong>Oyindamola Odeyiola</strong></div>
+            <div class="payment-detail"><span>Bank</span><strong>Monzo Bank</strong></div>
+            <div class="payment-detail"><span>Account Number</span><strong>61614700</strong></div>
+            <div class="payment-detail"><span>Sort Code</span><strong>04-00-03</strong></div>
+          </div>
+          <div class="pay-actions">
+            <button type="button" class="btn btn-dark" id="copyPaymentDetails">Copy Payment Details</button>
+            <a href="mailto:timelessbyo@gmail.com?subject=Payment%20Confirmation%20-%20Timelessbyo" class="btn btn-gold">Email Payment Confirmation</a>
+          </div>
+          <p class="payment-note" id="paymentCopyStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="info-item">
+          <span class="eyebrow">Instagram</span>
+          <a href="https://instagram.com/timelessbyo" target="_blank" rel="noopener">@timelessbyo</a>
+        </div>
+        <div class="info-item">
+          <span class="eyebrow">WhatsApp</span>
+          <a href="https://wa.me/447933177640" target="_blank" rel="noopener">+44 7933 177640</a>
+        </div>
+        <div class="info-item">
+          <span class="eyebrow">Email</span>
+          <a href="mailto:timelessbyo@gmail.com">timelessbyo@gmail.com</a>
+        </div>
+        <div class="info-item">
+          <span class="eyebrow">Response Time</span>
+          <p>We typically reply within 24–48 hours.</p>
+        </div>
+        <div class="info-item">
+          <span class="eyebrow">Booking Note</span>
+          <p>A deposit confirms your date — see the <a href="index.html#pricing" style="text-decoration:underline;">pricing menu</a> for details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo-light.png" alt="Timelessbyo" class="footer-logo" loading="lazy" decoding="async" draggable="false">
+      <p>Portrait, event, commercial and fine-art photography — booked by appointment.</p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Explore</span>
+      <p><a href="portfolio.html">Portfolio</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Connect</span>
+      <p><a href="https://instagram.com/timelessbyo" target="_blank" rel="noopener">Instagram — @timelessbyo</a><br><a href="https://wa.me/447933177640" target="_blank" rel="noopener">WhatsApp — +44 7933 177640</a><br><a href="mailto:timelessbyo@gmail.com">timelessbyo@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Timelessbyo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="protect.js"></script>
+<script src="contact.js"></script>
+
+<script>
+(function () {
+  const copyButton = document.getElementById('copyPaymentDetails');
+  const status = document.getElementById('paymentCopyStatus');
+  if (!copyButton) return;
+  const details = 'Account Name: Oyindamola Odeyiola\nBank: Monzo Bank\nAccount Number: 61614700\nSort Code: 04-00-03';
+  copyButton.addEventListener('click', async function () {
+    try {
+      await navigator.clipboard.writeText(details);
+      status.textContent = 'Payment details copied.';
+    } catch (e) {
+      status.textContent = details.replace(/\n/g, ' • ');
+    }
+  });
+})();
+</script>
+</body>
+</html>

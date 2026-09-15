@@ -1,0 +1,24 @@
+TIMELESSBYO — FINAL PRE-LAUNCH BUILD
+
+Included in this build:
+- Homepage lazy-loading/hero rotation preserved and kept rotating through the agreed photography set.
+- Added recent-work photos supplied for the latest portfolio selection.
+- About page converted from CEO/Founder presentation to Our Partners: John Odeyiola first, Oyindamola Odeyiola second, with supplied portraits and partner biographies.
+- Official business email standardized to timelessbyo@gmail.com.
+- Contact / Book a Session includes Pay Now bank-transfer instructions and payment confirmation email action.
+- What We Do includes weddings/events, commercial work, travel/fine art, videography and event coverage.
+- Homepage highlights Videography & Event Coverage with an Instagram route for recent films/coverage.
+- Portfolio includes an Instagram-exclusive behind-the-scenes teaser and CTA.
+- Custom polished 404 page retained.
+- Security/copy-protection measures retained: common image save/drag/copy actions are discouraged; screenshots and developer tools cannot be technically prevented by a static website.
+- Cache/security headers retained with HTML revalidation and long-lived static-asset caching.
+- Mobile responsive styling retained and extended for the new partner/Instagram sections.
+- Local link and asset scan completed with zero missing local references.
+- JavaScript syntax checks completed successfully.
+- Local HTTP smoke test completed successfully for all main pages and newly added partner/recent-work assets.
+
+LAUNCH NOTE:
+The final public domain is not yet known in this package. After the domain is connected, set absolute HTTPS Open Graph/Twitter image URLs (and og:url if desired) to the final domain. This is intentionally not guessed here.
+
+PAYMENT NOTE:
+The current “Pay Now” flow presents the supplied Monzo bank-transfer details on the website. It is not a card-payment processor. A true card checkout would require a payment gateway integration.

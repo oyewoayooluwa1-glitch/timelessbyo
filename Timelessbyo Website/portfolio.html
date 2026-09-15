@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e0e0d">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Portfolio — Timelessbyo</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Timelessbyo — Photography">
+<meta property="og:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta property="og:image" content="images/portrait-1.jpg">
+<meta property="og:image:alt" content="Timelessbyo photography">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Timelessbyo — Photography">
+<meta name="twitter:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta name="twitter:image" content="images/portrait-1.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .page-hero {
+    padding: 190px 0 70px;
+    background: var(--pine);
+    color: var(--ivory);
+  }
+  .page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-style: italic; }
+  .page-hero p { max-width: 480px; margin-top: 18px; color: rgba(247,241,230,0.72); line-height: 1.8; }
+
+  .filters {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  .filter-list { display: flex; gap: 30px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+  .filter-list button {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--grey);
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+  }
+  .filter-list button.active, .filter-list button:hover { color: var(--pine); border-bottom-color: var(--gold); }
+
+  .gallery {
+    padding: 60px 0 140px;
+    column-count: 3;
+    column-gap: 18px;
+  }
+  .gallery figure {
+    margin: 0 0 18px;
+    break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  .gallery figure img { width: 100%; transition: transform 0.7s ease, filter 0.5s ease; }
+  .gallery figure:hover img { transform: scale(1.045); }
+  .gallery figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 18px 20px;
+    background: linear-gradient(0deg, rgba(5,5,4,0.75), transparent);
+    color: var(--ivory);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .gallery figure:hover figcaption { opacity: 1; transform: translateY(0); }
+  .gallery .hide { display: none; }
+
+  @media (max-width: 900px) { .gallery { column-count: 2; } }
+  @media (max-width: 560px) { .gallery { column-count: 1; } }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 900;
+    background: rgba(5,5,4,0.94);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 6vw;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-height: 88vh; max-width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close {
+    position: absolute; top: 30px; right: 6vw;
+    background: none; border: 1px solid rgba(247,241,230,0.4); color: var(--ivory);
+    width: 44px; height: 44px; border-radius: 50%;
+    font-size: 1.1rem; cursor: pointer;
+  }
+  .instagram-tease { background: var(--pine); color: var(--ivory); padding: 90px 0; }
+  .instagram-tease-grid { display:grid; grid-template-columns: 1.05fr 0.95fr; gap:70px; align-items:center; }
+  .instagram-tease-media { overflow:hidden; background:var(--pine-deep); }
+  .instagram-tease-media img { width:100%; aspect-ratio:4/5; object-fit:cover; display:block; transition:transform .8s ease; }
+  .instagram-tease-media:hover img { transform:scale(1.035); }
+  .instagram-tease-copy .eyebrow { color:var(--gold-soft); }
+  .instagram-tease-copy h2 { margin-top:16px; font-size:clamp(2rem,4vw,3.2rem); font-style:italic; }
+  .instagram-tease-copy p { margin-top:20px; max-width:520px; line-height:1.85; color:rgba(247,241,230,.72); }
+  .instagram-tease-copy .btn { margin-top:30px; }
+  @media (max-width:760px) { .instagram-tease-grid { grid-template-columns:1fr; gap:36px; } }
+</style>
+</head>
+<body>
+<header class="site-header page-header">
+  <a href="index.html" class="brand">
+    <img src="images/logo-light.png" alt="Timelessbyo" class="brand-logo brand-logo-light" loading="lazy" decoding="async" draggable="false">
+    <img src="images/logo-dark.png" alt="Timelessbyo" class="brand-logo brand-logo-dark" loading="lazy" decoding="async" draggable="false">
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">The Work</span>
+      <h1 style="margin-top:16px;">Portfolio</h1>
+      <p>A running collection across four disciplines — filter by category, or browse everything together.</p>
+    </div>
+  </section>
+
+  <nav class="filters" aria-label="Filter gallery by category">
+    <div class="wrap">
+      <ul class="filter-list">
+        <li><button data-filter="all" class="active">All</button></li>
+        <li><button data-filter="weddings">Weddings &amp; Events</button></li>
+        <li><button data-filter="portraits">Portraits &amp; Fashion</button></li>
+        <li><button data-filter="commercial">Commercial &amp; Product</button></li>
+        <li><button data-filter="travel">Nature, Travel &amp; Fine Art</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="gallery wrap" id="gallery">
+    <figure data-cat="portraits"><img src="images/portrait-1.jpg" alt="Studio portrait, seated, traditional attire" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/couple-1.jpg" alt="Couple embracing, formal event" loading="lazy" decoding="async" draggable="false"><figcaption>Engagement Story</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-1.jpg" alt="Bride smiling during wedding ceremony" loading="lazy" decoding="async" draggable="false"><figcaption>Wedding Day</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-2.jpg" alt="Bride and groom exchanging vows with registrar" loading="lazy" decoding="async" draggable="false"><figcaption>Wedding Ceremony</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-3.jpg" alt="Close-up of wedding ring exchange" loading="lazy" decoding="async" draggable="false"><figcaption>Ring Exchange</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-4.jpg" alt="Maternity portrait, detail of hands and ring" loading="lazy" decoding="async" draggable="false"><figcaption>Maternity Session</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-5.jpg" alt="Couple embracing, close portrait" loading="lazy" decoding="async" draggable="false"><figcaption>Engagement Story</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-6.jpg" alt="Couple portrait on location" loading="lazy" decoding="async" draggable="false"><figcaption>Couple Session</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-7.jpg" alt="Couple forming a heart with hands" loading="lazy" decoding="async" draggable="false"><figcaption>Couple Session</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/wedding-8.jpg" alt="Couple portrait, seated on bench" loading="lazy" decoding="async" draggable="false"><figcaption>Couple Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/portrait-2.jpg" alt="Studio portrait, close detail" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="travel"><img src="images/horse-1.jpg" alt="Black and white portrait on horseback" loading="lazy" decoding="async" draggable="false"><figcaption>Fine Art — Mounted</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/family-2.jpg" alt="Formal studio portrait, standing" loading="lazy" decoding="async" draggable="false"><figcaption>Studio Portrait</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-1.jpg" alt="Jewelry detail, bracelets and rings" loading="lazy" decoding="async" draggable="false"><figcaption>Product Detail</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-2.jpg" alt="Fashion portrait, styled outfit" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-3.jpg" alt="Portrait session, styled look" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-4.jpg" alt="Product detail, luxury watch and accessories" loading="lazy" decoding="async" draggable="false"><figcaption>Product Detail</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-5.jpg" alt="Jewelry detail, earrings and necklace" loading="lazy" decoding="async" draggable="false"><figcaption>Product Detail</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-6.jpg" alt="Jewelry detail, pearl necklace" loading="lazy" decoding="async" draggable="false"><figcaption>Product Detail</figcaption></figure>
+    <figure data-cat="commercial"><img src="images/commercial-7.jpg" alt="Fashion portrait, tailored blazer dress" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="travel"><img src="images/sunset-1.jpg" alt="Golden hour over the city" loading="lazy" decoding="async" draggable="false"><figcaption>Golden Hour</figcaption></figure>
+    <figure data-cat="weddings"><img src="images/family-1.jpg" alt="Family portrait, two generations" loading="lazy" decoding="async" draggable="false"><figcaption>Family Sitting</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-1.jpg" alt="City architecture and hills at dusk" loading="lazy" decoding="async" draggable="false"><figcaption>On Location</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/portrait-3.jpg" alt="Studio portrait, side profile" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-1.jpg" alt="Glamour portrait, evening wear" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-2.jpg" alt="Birthday portrait session" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-3.jpg" alt="Studio portrait, black and white, formal wear" loading="lazy" decoding="async" draggable="false"><figcaption>Studio Portrait</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-4.jpg" alt="Fashion portrait, trench coat and sunglasses" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-5.jpg" alt="Close-up portrait with sunglasses" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-6.jpg" alt="Portrait in traditional white attire" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-7.jpg" alt="Fashion portrait with red roses" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-8.jpg" alt="Fashion portrait, red dress with roses" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-9.jpg" alt="Portrait with red roses, black dress" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-10.jpg" alt="Portrait session, white outfit" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-11.jpg" alt="Portrait session, patterned outfit" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-12.jpg" alt="Portrait session, seated, smiling" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-13.jpg" alt="Fashion portrait, pink outfit, sunglasses" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-14.jpg" alt="Candid portrait, pool table" loading="lazy" decoding="async" draggable="false"><figcaption>Lifestyle Portrait</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-15.jpg" alt="Fashion portrait, evening streetwear" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-16.jpg" alt="Portrait session, tailored jacket and skirt" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-17.jpg" alt="Portrait session, playful pose" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-18.jpg" alt="Portrait session, patterned co-ord" loading="lazy" decoding="async" draggable="false"><figcaption>Portrait Session</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-19.jpg" alt="Fashion portrait, red rose and smoke" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="portraits"><img src="images/fashion-20.jpg" alt="Glamour portrait, fur stole and gold clutch" loading="lazy" decoding="async" draggable="false"><figcaption>Fashion Editorial</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-3.jpg" alt="Portrait in white agbada with traditional drums" loading="lazy" decoding="async" draggable="false"><figcaption>Fine Art Portrait</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-4.jpg" alt="Fashion portrait on a residential street" loading="lazy" decoding="async" draggable="false"><figcaption>On Location</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-5.jpg" alt="Silhouette by the sea under a cloudy sky" loading="lazy" decoding="async" draggable="false"><figcaption>Coastal Portrait</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-6.jpg" alt="Jewelry detail against sequin backdrop" loading="lazy" decoding="async" draggable="false"><figcaption>Fine Art Detail</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-7.jpg" alt="Close-up portrait, traditional attire" loading="lazy" decoding="async" draggable="false"><figcaption>Fine Art Portrait</figcaption></figure>
+    <figure data-cat="travel"><img src="images/travel-8.jpg" alt="Maternity portrait at dusk" loading="lazy" decoding="async" draggable="false"><figcaption>Fine Art Portrait</figcaption></figure>
+  </section>
+<section class="instagram-tease">
+  <div class="wrap instagram-tease-grid">
+    <div class="instagram-tease-media reveal">
+      <img src="images/rotation-woman-camera.jpg" alt="Behind-the-scenes photographer at work" loading="lazy" decoding="async" draggable="false">
+    </div>
+    <div class="instagram-tease-copy reveal">
+      <span class="eyebrow">Beyond the Portfolio</span>
+      <h2>More behind the scenes on Instagram.</h2>
+      <p>Some stories are best experienced beyond the final frame. Follow Timelessbyo for behind-the-scenes moments, recent work, short films and the stories that happen between the photographs.</p>
+      <a href="https://instagram.com/timelessbyo" target="_blank" rel="noopener noreferrer" class="btn btn-gold">See the Full Story on Instagram →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo-light.png" alt="Timelessbyo" class="footer-logo" loading="lazy" decoding="async" draggable="false">
+      <p>Portrait, event, commercial and fine-art photography — booked by appointment.</p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Explore</span>
+      <p><a href="portfolio.html">Portfolio</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Connect</span>
+      <p><a href="https://instagram.com/timelessbyo" target="_blank" rel="noopener">Instagram — @timelessbyo</a><br><a href="https://wa.me/447933177640" target="_blank" rel="noopener">WhatsApp — +44 7933 177640</a><br><a href="mailto:timelessbyo@gmail.com">timelessbyo@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Timelessbyo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="protect.js"></script>
+<script src="portfolio.js"></script>
+</body>
+</html>

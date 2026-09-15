@@ -1,0 +1,13 @@
+Timelessbyo pre-launch notes
+
+1. Open Graph image/url: the project does not yet know the final public domain. Before launch, set absolute og:image, twitter:image and (optionally) og:url values to the final HTTPS domain. The current metadata uses a relative image path so the asset remains valid locally.
+2. CDN: the _headers file contains cache rules suitable for hosts that support this format (e.g. Cloudflare Pages/Netlify-style deployments). If using another host, replicate the same Cache-Control/security headers in that host's configuration.
+3. Independent backup: keep the separate timelessbyo-prelaunch-backup.zip outside the deployment folder. Do not upload it to the public web root.
+4. Contact form: this is still a static mailto workflow. It does not create a server-side enquiry endpoint, so there is no enquiry database to cache.
+5. After DNS is connected, run a real-world link/security/performance check against the live HTTPS URL.
+
+Final pre-launch additions in this build:
+- About section now presents John Odeyiola and Oyindamola Odeyiola as Partners, in that order, using the supplied portraits and partner biographies.
+- Portfolio includes an Instagram-exclusive behind-the-scenes teaser.
+- Homepage highlights videography and event coverage.
+- Independent backup was created before these edits.

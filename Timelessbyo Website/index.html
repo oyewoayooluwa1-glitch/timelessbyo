@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e0e0d">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Timelessbyo — Photography</title>
+<meta name="description" content="Timelessbyo — portrait, event, commercial and fine-art photography.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Timelessbyo — Photography">
+<meta property="og:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta property="og:image" content="images/portrait-1.jpg">
+<meta property="og:image:alt" content="Timelessbyo photography">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Timelessbyo — Photography">
+<meta name="twitter:description" content="Timeless portrait, wedding, event, commercial, travel, fine-art and videography.">
+<meta name="twitter:image" content="images/portrait-1.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--pine);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('images/portrait-1.jpg');
+    background-size: cover;
+    background-position: 50% 22%;
+    transform: scale(1.08);
+    filter: brightness(0.55) saturate(1.05);
+    animation: heroin 2.2s ease forwards;
+  }
+  @keyframes heroin { from { transform: scale(1.15); filter: brightness(0.3) saturate(1.05);} to { transform: scale(1.08); filter: brightness(0.55) saturate(1.05);} }
+  .hero-veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(5,5,4,0.35) 0%, rgba(5,5,4,0.15) 40%, rgba(5,5,4,0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 6vw 90px;
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    color: var(--ivory);
+  }
+  .hero-content .eyebrow { color: var(--gold-soft); margin-bottom: 22px; display: block; opacity: 0; animation: fadeup 1s ease 0.5s forwards; }
+  .hero-logo {
+    width: min(560px, 78vw);
+    opacity: 0;
+    animation: fadeup 1.1s ease 0.7s forwards;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25));
+  }
+  .hero-sub {
+    margin-top: 26px;
+    max-width: 480px;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: rgba(247,241,230,0.82);
+    opacity: 0;
+    animation: fadeup 1.1s ease 0.95s forwards;
+  }
+  .hero-actions { margin-top: 40px; display: flex; gap: 18px; flex-wrap: wrap; opacity: 0; animation: fadeup 1.1s ease 1.15s forwards; }
+  @keyframes fadeup { from { opacity: 0; transform: translateY(18px);} to { opacity: 1; transform: translateY(0);} }
+  .scroll-cue {
+    position: absolute; bottom: 34px; right: 6vw; z-index: 2;
+    display: flex; align-items: center; gap: 10px;
+    color: var(--ivory); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0; animation: fadeup 1s ease 1.4s forwards;
+  }
+  .scroll-cue .stem { width: 1px; height: 40px; background: rgba(247,241,230,0.5); position: relative; overflow: hidden; }
+  .scroll-cue .stem::after { content:''; position:absolute; top:-40px; left:0; width:100%; height:40px; background: var(--gold); animation: stemrun 2.2s ease-in-out infinite; }
+  @keyframes stemrun { 0% { top: -40px; } 100% { top: 40px; } }
+
+  /* Intro strip */
+  .intro { padding: 130px 0 90px; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; }
+  .intro-grid h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1.2; font-style: italic; }
+  .intro-grid p { font-size: 0.98rem; line-height: 1.85; color: rgba(33,31,26,0.7); margin-top: 22px;}
+  @media (max-width: 820px) { .intro-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+  /* Categories */
+  .categories { background: var(--pine); color: var(--ivory); }
+  .categories .section-head h2, .categories .section-head p { color: var(--ivory); }
+  .categories .section-head p { color: rgba(247,241,230,0.65); }
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-light); }
+  .cat-card { background: var(--pine-deep); padding: 46px 30px; position: relative; overflow: hidden; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .cat-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.28; transition: opacity 0.5s ease, transform 0.6s ease; }
+  .cat-card:hover img { opacity: 0.55; transform: scale(1.06); }
+  .cat-card .num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold-soft); position: relative; z-index: 1; }
+  .cat-card h3 { position: relative; z-index: 1; margin-top: 14px; font-size: 1.5rem; color: var(--ivory); font-style: italic; }
+  @media (max-width: 900px) { .cat-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
+
+  /* Featured */
+  .feature-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 18px; }
+  .feature-strip figure { margin: 0; overflow: hidden; }
+  .feature-strip img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; transition: transform 0.8s ease; }
+  .feature-strip figure:hover img { transform: scale(1.05); }
+  .feature-strip .tall { aspect-ratio: auto; height: 100%; }
+  @media (max-width: 820px) { .feature-strip { grid-template-columns: 1fr 1fr; } .feature-strip figure:first-child { grid-column: 1 / -1; } }
+
+  /* Pricing */
+  .pricing { background: var(--ivory-dim); }
+  .price-card {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px clamp(24px, 5vw, 70px);
+    position: relative;
+  }
+  .price-card::before, .price-card::after {
+    content: '';
+    position: absolute; width: 26px; height: 26px;
+    border-color: var(--gold); border-style: solid;
+  }
+  .price-card::before { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
+  .price-card::after { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+  .price-card h3 { text-align: center; font-size: 2.2rem; font-style: italic; }
+  .price-card .price-note { text-align: center; font-size: 0.82rem; color: rgba(33,31,26,0.55); margin-top: 10px; }
+  .price-group { margin-top: 40px; }
+  .price-group-label { font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: block; }
+  .price-row {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  .price-row .item-name { font-size: 1.02rem; }
+  .price-row .dots { flex: 1; border-bottom: 1px dotted rgba(33,31,26,0.25); transform: translateY(-4px); }
+  .price-row .item-amt { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--pine); white-space: nowrap; }
+
+  /* CTA band */
+  .cta-band {
+    background: var(--pine);
+    color: var(--ivory);
+    text-align: center;
+    padding: 110px 0;
+  }
+  .cta-band h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-style: italic; }
+  .cta-band p { margin: 20px auto 40px; max-width: 480px; color: rgba(247,241,230,0.7); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <img src="images/logo-light.png" alt="Timelessbyo" class="brand-logo brand-logo-light" loading="lazy" decoding="async" draggable="false">
+    <img src="images/logo-dark.png" alt="Timelessbyo" class="brand-logo brand-logo-dark" loading="lazy" decoding="async" draggable="false">
+  </a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-rotation" aria-hidden="true" data-images="images/lazy-portrait.jpg|images/lazy-billiards.jpg|images/wedding-1.jpg|images/rotation-camera.jpg|images/rotation-banquet.jpg|images/rotation-woman-camera.jpg"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Portrait · Event · Commercial · Fine Art</span>
+      <img src="images/logo-light.png" alt="Timelessbyo" class="hero-logo" loading="lazy" decoding="async" draggable="false">
+      <p class="hero-sub">Photography built on patience and light — portraits, celebrations, and quiet moments, held the way you'll want to remember them.</p>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn btn-light">View Portfolio</a>
+        <a href="contact.html" class="btn btn-gold">Book a Session</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><span class="stem"></span></div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap intro-grid reveal">
+      <h2>Five ways of seeing, one way of working — carefully, and with an eye for the moment before the moment.</h2>
+      <p>Timelessbyo works across portraiture, weddings and events, commercial work, and travel &amp; fine art — bringing the same formal, considered approach to each. Every session begins with a conversation about how you want to be seen, and ends with images that hold up long after the day is over.</p>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Our Expertise</h2>
+        <p>Five creative disciplines, each approached with the same attention to light, composition and character.</p>
+      </div>
+    </div>
+    <div class="cat-grid reveal">
+      <a class="cat-card" href="portfolio.html#weddings">
+        <img src="images/couple-1.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+        <span class="num">01</span>
+        <h3>Weddings &amp; Events</h3>
+      </a>
+      <a class="cat-card" href="portfolio.html#portraits">
+        <img src="images/portrait-2.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+        <span class="num">02</span>
+        <h3>Portraits &amp; Fashion</h3>
+      </a>
+      <a class="cat-card" href="portfolio.html#commercial">
+        <img src="images/family-2.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+        <span class="num">03</span>
+        <h3>Commercial &amp; Product</h3>
+      </a>
+      <a class="cat-card" href="portfolio.html#travel">
+        <img src="images/horse-1.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+        <span class="num">04</span>
+        <h3>Nature, Travel &amp; Fine Art</h3>
+      </a>
+      <a class="cat-card" href="https://instagram.com/timelessbyo" target="_blank" rel="noopener noreferrer">
+        <img src="images/rotation-camera.jpg" alt="Camera ready for videography and event coverage" loading="lazy" decoding="async" draggable="false">
+        <span class="num">05</span>
+        <h3>Videography &amp; Event Coverage</h3>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Recent Work</h2>
+        <p>A short selection — the full portfolio is organised by category.</p>
+      </div>
+      <div class="feature-strip reveal">
+        <figure class="tall"><img src="images/portrait-1.jpg" alt="Studio portrait in traditional attire" loading="lazy" decoding="async" draggable="false"></figure>
+        <figure><img src="images/family-1.jpg" alt="Studio portrait, close detail" loading="lazy" decoding="async" draggable="false"></figure>
+        <figure><img src="images/sunset-1.jpg" alt="Rooftop at golden hour" loading="lazy" decoding="async" draggable="false"></figure>
+        <figure><img src="images/recent-work-1.jpg" alt="Wedding portrait session" loading="lazy" decoding="async" draggable="false"></figure>
+        <figure><img src="images/recent-work-2.jpg" alt="Children's portrait session" loading="lazy" decoding="async" draggable="false"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal" style="justify-content:center; text-align:center; flex-direction:column; align-items:center;">
+        <h2>Pricing Menu</h2>
+        <p style="max-width:520px;">A starting guide — every booking is confirmed with a tailored quote.</p>
+      </div>
+
+      <div class="price-card reveal" id="priceCard">
+        <h3>Rate Card</h3>
+        <p class="price-note">All prices in GBP (£). Every booking is confirmed with a tailored quote.</p>
+
+        <div class="price-group">
+          <span class="price-group-label">Photography</span>
+          <div class="price-row"><span class="item-name">Basic Session — 1 hour, 1 outfit, 8 retouched images</span><span class="dots"></span><span class="item-amt">£150</span></div>
+          <div class="price-row"><span class="item-name">Standard Session — 2 hours, 2 outfits, 15 retouched images</span><span class="dots"></span><span class="item-amt">£200</span></div>
+          <div class="price-row"><span class="item-name">Premium Session — 3+ hours, 3+ outfits, up to 25 retouched images</span><span class="dots"></span><span class="item-amt">£250</span></div>
+        </div>
+
+        <div class="price-group">
+          <span class="price-group-label">Wedding Photography</span>
+          <div class="price-row"><span class="item-name">Within Stoke-on-Trent</span><span class="dots"></span><span class="item-amt">£150/hr</span></div>
+          <div class="price-row"><span class="item-name">Outside Stoke-on-Trent</span><span class="dots"></span><span class="item-amt">£200/hr</span></div>
+        </div>
+
+        <div class="price-group">
+          <span class="price-group-label">Cinematography</span>
+          <div class="price-row"><span class="item-name">1 Minute Video Reel</span><span class="dots"></span><span class="item-amt">£150</span></div>
+          <div class="price-row"><span class="item-name">Event / Wedding Video Coverage (incl. 3-min highlight)</span><span class="dots"></span><span class="item-amt">£200/hr</span></div>
+        </div>
+
+        <p class="price-note" style="margin-top:20px;">Frames &amp; photobooks are available by request. Home service attracts an extra £20 charge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band reveal">
+    <div class="wrap">
+      <span class="eyebrow">Let's work together</span>
+      <h2 style="margin-top:18px;">Ready to book your session?</h2>
+      <p>Tell us the date, the occasion, and the look you're after — we'll take it from there.</p>
+      <p class="closing-quote"><em>Your moments deserve to be captured beautifully. Let’s create something timeless together.</em></p>
+      <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img src="images/logo-light.png" alt="Timelessbyo" class="footer-logo" loading="lazy" decoding="async" draggable="false">
+      <p>Portrait, wedding, event, commercial, videography and fine-art work — booked by appointment.</p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Explore</span>
+      <p><a href="portfolio.html">Portfolio</a><br><a href="about.html">About</a><br><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <span class="footer-cols-title">Connect</span>
+      <p><a href="https://instagram.com/timelessbyo" target="_blank" rel="noopener">Instagram — @timelessbyo</a><br><a href="https://wa.me/447933177640" target="_blank" rel="noopener">WhatsApp — +44 7933 177640</a><br><a href="mailto:timelessbyo@gmail.com">timelessbyo@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> Timelessbyo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="protect.js"></script>
+
+</body>
+</html>
