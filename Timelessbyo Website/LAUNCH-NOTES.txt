@@ -11,3 +11,5 @@ Final pre-launch additions in this build:
 - Portfolio includes an Instagram-exclusive behind-the-scenes teaser.
 - Homepage highlights videography and event coverage.
 - Independent backup was created before these edits.
+
+content doesn't matter
