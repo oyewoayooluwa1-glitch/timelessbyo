@@ -97,8 +97,17 @@
   .cat-card:hover img { opacity: 0.55; transform: scale(1.06); }
   .cat-card .num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold-soft); position: relative; z-index: 1; }
   .cat-card h3 { position: relative; z-index: 1; margin-top: 14px; font-size: 1.5rem; color: var(--ivory); font-style: italic; }
-  @media (max-width: 900px) { .cat-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) {
+  .cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
   /* Featured */
   .feature-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 18px; }
@@ -219,7 +228,7 @@
         <span class="num">04</span>
         <h3>Nature, Travel &amp; Fine Art</h3>
       </a>
-      <a class="cat-card wide" href="https://instagram.com/timelessbyo" target="_blank" rel="noopener noreferrer">
+      <a class="cat-card" href="https://instagram.com/timelessbyo" target="_blank" rel="noopener noreferrer">
         <img src="images/rotation-camera.jpg" alt="Camera ready for videography and event coverage" loading="lazy" decoding="async" draggable="false">
         <span class="num">05</span>
         <h3>Videography &amp; Event Coverage</h3>
